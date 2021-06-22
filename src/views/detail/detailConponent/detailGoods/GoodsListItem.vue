@@ -28,8 +28,7 @@
 		created() {
 			this.ImgLoadDebounce = this.debounce(() => {
 				this.$bus.emit('itemImgLoad')
-				// console.log('000')
-			}, 0)
+			}, 100)
 		},
 		methods:{
 			debounce(func, delay){
