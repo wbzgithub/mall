@@ -14,6 +14,7 @@
 			</scroll>
 			<detail-bottom-bar @addCart="addCart"></detail-bottom-bar>
 		</div>
+		<toast :messages="message" :show="show"></toast>
 	</div>
 </template>
 
@@ -27,6 +28,7 @@
 	import DetailComent from './detailConponent/DetailComment.vue'
 	import GoodsList from './detailConponent/detailGoods/GoodsList.vue'
 	import DetailBottomBar from './detailConponent/DetailBottomBar.vue'
+	import Toast from 'components/common/toast/Toast.vue'
 	
 	import Scroll from 'components/common/scroll/Scroll'
 	
@@ -45,6 +47,7 @@
 			DetailComent,
 			GoodsList,
 			DetailBottomBar,
+			Toast,
 			
 			Scroll,
 
@@ -152,7 +155,13 @@
 				product.price = this.goods.realPrice;
 				product.iid = this.iid;
 				//将商品添加到购物车里
-				this.$store.dispatch('addCart', product);
+				this.$store.dispatch('addCart', product).then(res => {
+					this.message = res
+					this.show = true
+					setTimeout(() => {
+						this.show = false
+					},1500)
+				})
 			}
 		}
 	}

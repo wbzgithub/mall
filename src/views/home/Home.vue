@@ -65,7 +65,8 @@
 				isShowBackTop:false,
 				isPullUpLoad:true,
 				isTabControl:false,
-				tabControlSetTop:null
+				tabControlSetTop:null,
+				oldScroll:0
 			}
 		},
 		created() {
@@ -91,6 +92,10 @@
 		},
 		activated() {
 			this.$refs.scroll.refresh()
+			this.$refs.scroll.scrollTo(0 , this.oldScroll ,0)
+		},
+		deactivated() {
+			this.oldScroll = this.$refs.scroll.getScrollY()
 		},
 		methods:{
 			//防抖

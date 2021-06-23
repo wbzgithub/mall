@@ -69,7 +69,8 @@
 	.section{
 		overflow: left;
 		margin-top: 15px;
-		margin-left: 5px;
+		margin-left: 115px;
+		
 	}
 	p {
 		overflow: hidden;
