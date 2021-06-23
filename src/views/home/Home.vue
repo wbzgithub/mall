@@ -89,6 +89,9 @@
 				return this.goods[this.currentType].list
 			}
 		},
+		activated() {
+			this.$refs.scroll.refresh()
+		},
 		methods:{
 			//防抖
 			debounce(func, delay){
@@ -156,7 +159,7 @@
 	}
 </script>
 
-<style scoped="">
+<style scoped>
 	#home{
 		position: relative;
 	}

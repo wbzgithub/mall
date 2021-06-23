@@ -3,7 +3,7 @@
 		<!-- <keep-alive>
 			<router-view></router-view>
 		</keep-alive> -->
-		<router-view v-slot="{ Component }" :key="key" >
+		<router-view v-slot="{ Component }" >
 		  <keep-alive exclude="Detail">
 		    <component :is="Component" />
 		  </keep-alive>
@@ -20,11 +20,6 @@
 		components: {
 			MainTabBar
 		},
-		computed:{
-			key(){
-				return this.$route.path
-			}
-		}
 	}
 </script>
 

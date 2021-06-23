@@ -58,7 +58,7 @@
 		padding-bottom: 40px;
 		position: relative;
 	}
-	.goods-item img{
+	 img{
 		width: 100%;
 		border-radius: 5px;
 	}

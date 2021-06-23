@@ -23,7 +23,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.recommend{
 		width: 100%;
 		text-align: center;
@@ -35,7 +35,7 @@
 		box-sizing: border-box;
 		float: left;
 	}
-	.recommend img{
+	 img{
 		width: 100%;
 		margin-bottom: 2px;
 	}
